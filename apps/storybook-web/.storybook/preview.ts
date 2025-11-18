@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/react';
+import { createElement } from 'react';
 import '../src/styles.css';
 
 const preview: Preview = {
@@ -45,7 +46,7 @@ const preview: Preview = {
         document.documentElement.classList.add(theme);
       }
 
-      return <Story />;
+      return createElement(Story);
     },
   ],
 };
