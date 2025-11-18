@@ -1,0 +1,42 @@
+{
+  "name": "plotta-storybook",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Plotta Design System - Professional component library and design tokens",
+  "keywords": [
+    "design-system",
+    "react",
+    "react-native",
+    "storybook",
+    "components",
+    "tokens"
+  ],
+  "author": "Daniel Lauding",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build --filter=@plotta/* && changeset publish",
+    "storybook": "pnpm --filter storybook-web storybook",
+    "build-storybook": "pnpm --filter storybook-web build-storybook"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "prettier": "^3.2.5",
+    "turbo": "^1.12.4",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.15.4"
+}
